@@ -5,7 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.hrms.testbase.BaseClass;
-public class LoginPageElements  extends BaseClass{
+import com.hrms.testbase.PageInitializer;
+public class LoginPageElements  extends PageInitializer{
 
 
 	
@@ -27,6 +28,22 @@ public class LoginPageElements  extends BaseClass{
 		
 		@FindBy(id = "logInPanelHeading")
 		public WebElement loginPanelHeading;
+		
+		/**
+		 * This method will login to HRMS by the given username and password
+		 * 
+		 * @param username
+		 * @param password
+		 */
+		public void loginToHrms(String username, String password) {
+			login.userNametextBox.sendKeys(username);
+			login.passwordTextBox.sendKeys(password);
+			login.btnLogin.click();
+		}
+		
+		public void ERROR_MSG_EMPTY_USERNAME() {
+			login.spanMessage.sendKeys("username cannot be empty");
+		}
 		
 		public LoginPageElements() {
 			PageFactory.initElements(driver, this);
