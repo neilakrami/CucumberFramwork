@@ -13,7 +13,7 @@ public class BaseClass {
 	
 	 protected static WebDriver driver;
 
-	public void setup() {
+	public static void setup() {
 		
 		ConfigsReader.readProperties(Constants.CONFIGURATION_FILEPATH);
 		
@@ -37,7 +37,7 @@ public class BaseClass {
 		PageInitializer.initializePageObjects();
 	}
 
-	public void tearDown() {
+	public static void tearDown() {
 		if(driver!=null) {
 			driver.quit();
 		}

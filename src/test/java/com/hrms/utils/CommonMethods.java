@@ -77,15 +77,18 @@ import org.openqa.selenium.WebElement;
 		 * Method that will take a screenshot and store with name in specified location with .png extension
 		 * @param fileName
 		 */
-		public static void takeScreen(String fileName) {
+		public static byte[] takeScreenShot(String fileName) {
 			
 			TakesScreenshot ts = (TakesScreenshot)driver;
+			byte[] bytes = ts.getScreenshotAs(OutputType.BYTES);
+			
 			File src = ts.getScreenshotAs(OutputType.FILE);
 			try {
-				FileUtils.copyFile(src,new File(Constants.SCREENSHOT_FILEPATH+fileName+ getTimeStamp()+".png"));
+				FileUtils.copyFile(src,new File(Constants.SCREENSHOT_FILEPATH + fileName+ getTimeStamp()+".png"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			return bytes;
 		}
 		/**
 		 * This method will generate timeStamp

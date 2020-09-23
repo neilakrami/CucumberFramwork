@@ -11,11 +11,11 @@ import io.cucumber.java.en.When;
 
 public class LoginStepDefinitions extends CommonMethods {
 
-	@Given("Go to HRMS login page")
-	public void go_to_hrms_login_page() {
-		setup();
-	 
-	}
+//	@Given("Go to HRMS login page")
+//	public void go_to_hrms_login_page() { ---> bcoze we created a HOOKS
+//		setup();
+//	 
+//	}
 
 	@When("Login with valid credentials")
 	public void login_with_valid_credentials() {
@@ -29,10 +29,10 @@ public class LoginStepDefinitions extends CommonMethods {
 		Assert.assertTrue(dash.welcome.isDisplayed());
 	}
 
-	@Then("quit the browser")
-	public void quit_the_browser() {
-		tearDown();
-	}
+//	@Then("quit the browser")
+//	public void quit_the_browser() { ---> bcoze we created a HOOKS
+//		tearDown();
+//	}
 	
 	@When("Login with invalid credentials")
 	public void login_with_invalid_credentials() {
