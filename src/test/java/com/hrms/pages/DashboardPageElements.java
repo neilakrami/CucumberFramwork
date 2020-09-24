@@ -1,5 +1,7 @@
 package com.hrms.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -32,9 +34,11 @@ public class DashboardPageElements extends BaseClass {
 	@FindBy(css = "a#welcome")
 	public WebElement welcome;
 	
-	@FindBy(id = "menu_pim_addEmployee")
+	@FindBy(xpath = "//a[text() = 'Add Employee']")
 	public WebElement addEmpBtn;
 
+	@FindBy(xpath = "//div[@class = 'menu']/ul/li")
+	public List<WebElement> dashTabs;
 
 	public DashboardPageElements() {
 		PageFactory.initElements(driver, this);
