@@ -34,7 +34,7 @@ public class LoginStepDefinitions extends CommonMethods {
 	
 	@When("Login with invalid credentials")
 	public void login_with_invalid_credentials() {
-		login.loginToHrms("Admin2", "Syntax");
+		login.loginToHrms("Admin", "Syntax");
 		
 	}
 

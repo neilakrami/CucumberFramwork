@@ -1,8 +1,7 @@
-@login
+@smoke
 Feature: Login Functionality
 
-
-@regression
+@smoke
 Scenario: Login with valid credentials
 When Login with valid credentials
 Then Verify the dashboard logo is displayed
