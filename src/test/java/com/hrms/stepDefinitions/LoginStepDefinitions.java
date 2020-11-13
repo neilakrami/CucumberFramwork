@@ -4,8 +4,6 @@ import org.junit.Assert;
 
 import com.hrms.utils.CommonMethods;
 import com.hrms.utils.ConfigsReader;
-
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
